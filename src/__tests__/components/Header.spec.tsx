@@ -1,6 +1,14 @@
-import { render } from '@testing-library/react';
 
+import { ReactNode } from 'react';
+import { render } from '@testing-library/react';
 import Header from '../../components/Header';
+
+jest.mock('react-router-dom', () => {
+    return {
+      Link: ({ children }: { children: ReactNode }) => children,
+    };
+  });
+  
 
 jest.mock('../../hooks/useCart', () => {
   return {
