@@ -1,5 +1,6 @@
 {
   "name": "criando_um_hook_de_carrinho_de_compras",
+  "homepage": "https://cinthia3301andrad.github.io/site-compras",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server server.json -p 3333"
+    "server": "json-server server.json -p 3333",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -42,9 +45,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://cinthia3301andrad.github.io/site-compras",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
+ 
+ 
   "devDependencies": {
     "@testing-library/react-hooks": "^5.1.0",
     "@types/react-icons": "^3.0.0",
