@@ -23,14 +23,34 @@
     {
       "id": 6,
       "amount": 10
+    },
+    {
+      "id": 9,
+      "amount": 20
+    },
+    {
+      "id": 10,
+      "amount": 15
     }
   ],
   "products": [
     {
+      "id": 9,
+      "title": "Canela molim colorida",
+      "price": 22,
+      "image": "https://cdn.sistemawbuy.com.br/arquivos/4682a952c3e4daa6535caecc1cac4111/produtos/TA6CU9/3c78c33c8140d96a3c7295a840172ff7-awsaccesskeyid-akiatclmsgfx4g7qtfvdeexpires-1608056805esignature-fqd6idaycrb9-5fcfc56a24505.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Marca texto Stabilo Boss",
+      "price": 12,
+      "image": "https://cdn.dooca.store/585/products/dc680e1b-8768-4348-b7e6-f419c5d4c82a_640x640+fill_ffffff.jpeg"
+    },
+    {
       "id": 1,
       "title": "Tênis de Caminhada Leve Confortável",
       "price": 179.9,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
+      "image": "https://static.netshoes.com.br/produtos/tenis-de-caminhada-leve-confortavel/06/E74-0492-006/E74-0492-006_zoom1.jpg"
     },
     {
       "id": 2,
@@ -42,7 +62,7 @@
       "id": 3,
       "title": "Tênis Adidas Duramo Lite 2.0",
       "price": 219.9,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
+      "image": "https://static.netshoes.com.br/produtos/tenis-de-caminhada-leve-confortavel/06/E74-0492-006/E74-0492-006_zoom1.jpg"
     },
     {
       "id": 5,
@@ -54,7 +74,7 @@
       "id": 6,
       "title": "Tênis Adidas Duramo Lite 2.0",
       "price": 219.9,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
+      "image": "https://static.netshoes.com.br/produtos/tenis-de-caminhada-leve-confortavel/06/E74-0492-006/E74-0492-006_zoom1.jpg"
     },
     {
       "id": 4,
@@ -62,5 +82,6 @@
       "price": 179.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     }
+   
   ]
 }

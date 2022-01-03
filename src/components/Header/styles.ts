@@ -8,10 +8,15 @@ export const Container = styled.header`
   margin: 50px 0;
 
   a {
+    text-decoration: none;
     transition: opacity 0.2s;
 
     &:hover {
       opacity: 0.7;
+    }
+
+    h2 {
+      color: white;
     }
   }
 `;
