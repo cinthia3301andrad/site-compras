@@ -117,24 +117,24 @@ describe("Hook useCard", () => {
       ])
     );
     expect(setItemLocalStorage).toHaveBeenCalledWith(
-      "@SiteCompas:cart",
+      "@SiteCompras:cart",
       JSON.stringify(result.current.cart)
     );
   });
 
-  /* it('Aumentar a quantidade de um produto quando adicionar um produto que já existe no carrinho', async () => {
+  it("Aumentar a quantidade de um produto quando adicionar um produto que já existe no carrinho", async () => {
     const productId = 1;
 
     apiMock.onGet(`stock/${productId}`).reply(200, {
       id: 1,
-      amount: 3,
+      amount: 23,
     });
     apiMock.onGet(`products/${productId}`).reply(200, {
       id: 1,
       image:
-        'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-      price: 179.9,
-      title: 'Tênis de Caminhada Leve Confortável',
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRx_7PC-kVaK0xOeqC969UaI39qcfpAJxVz6Csnh4S-28nr4yY17hBls8IF2e7GYvNFL4ckRgwFzEL7Idxlm-HV6yP7I1u4oxKUy6IafWdo&usqp=CAE",
+      price: 44.55,
+      title: "Batom Matte - Descontraída - Dailus, Nude, Descontraida",
     });
 
     const { result, waitForNextUpdate } = renderHook(useCart, {
@@ -151,25 +151,25 @@ describe("Hook useCard", () => {
       expect.arrayContaining([
         {
           id: 1,
-          amount: 3,
+          amount: 23,
           image:
-            'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg',
-          price: 179.9,
-          title: 'Tênis de Caminhada Leve Confortável',
+            "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRx_7PC-kVaK0xOeqC969UaI39qcfpAJxVz6Csnh4S-28nr4yY17hBls8IF2e7GYvNFL4ckRgwFzEL7Idxlm-HV6yP7I1u4oxKUy6IafWdo&usqp=CAE",
+          price: 44.55,
+          title: "Batom Matte - Descontraída - Dailus, Nude, Descontraida",
         },
         {
           id: 2,
-          amount: 1,
+          amount: 40,
           image:
-            'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg',
-          price: 139.9,
-          title: 'Tênis VR Caminhada Confortável Detalhes Couro Masculino',
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS7xhvzwYuN6MHS5cvjPus-IYDlNe1eRpatiyB_zqjvEye22XA2vTagDsY8w7b9LskMSLNJL9EwWzGK3x80MCmTTLwde0ClZy33_Hpivqo&usqp=CAE",
+          price: 23.55,
+          title: "Batom nude cobertura total",
         },
       ])
     );
-    expect(mockedSetItemLocalStorage).toHaveBeenCalledWith(
-      '@RocketShoes:cart',
+    expect(setItemLocalStorage).toHaveBeenCalledWith(
+      "@SiteCompras:cart",
       JSON.stringify(result.current.cart)
     );
-  }); */
+  });
 });
