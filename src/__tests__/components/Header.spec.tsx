@@ -9,7 +9,7 @@ jest.mock('react-router-dom', () => {
     };
   });
   
-
+/* aqui faço a simulação do hook useCart que compartilha o estado cart entre as funções, adicionando dois produtos a ele */
 jest.mock('../../hooks/useCart', () => {
   return {
     useCart: () => ({
