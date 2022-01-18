@@ -23,7 +23,7 @@ const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const [cart, setCart] = useState<Product[]>(() => {
-    const storagedCart = localStorage.getItem("@RocketShoes:cart");
+    const storagedCart = localStorage.getItem("@SiteCompras:cart");
     if (storagedCart) {
       return JSON.parse(storagedCart);
     }
@@ -59,7 +59,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
       setCart(newProductsInCard);
       localStorage.setItem(
-        "@RocketShoes:cart",
+        "@SiteCompras:cart",
         JSON.stringify(newProductsInCard)
       );
     } catch {
@@ -77,7 +77,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         newProductsUpdated.splice(indexProductCart, 1);
         setCart(newProductsUpdated);
         localStorage.setItem(
-          "@RocketShoes:cart",
+          "@SiteCompras:cart",
           JSON.stringify(newProductsUpdated)
         );
       } else {
@@ -111,15 +111,15 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         productIsExistInCart.amount = amount;
         setCart(newProductsInCard);
         localStorage.setItem(
-          "@RocketShoes:cart",
+          "@SiteCompras:cart",
           JSON.stringify(newProductsInCard)
         );
       } else {
-        toast.error("Erro na alteração de quantidade do produto");
+        toast.error("Ops! Houve um erro na alteração de quantidade do produto");
         return;
       }
     } catch {
-      toast.error("Erro na alteração de quantidade do produto");
+      toast.error("Ops! Houve um erro na alteração de quantidade do produto");
     }
   };
 
