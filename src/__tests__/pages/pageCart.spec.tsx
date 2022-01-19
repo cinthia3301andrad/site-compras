@@ -29,6 +29,14 @@ describe('Testes na pagina Cart', () => {
             price: 23.55,
             title: "Batom nude cobertura total",
           },
+          {
+            id: 3,
+            amount: 1,
+            image:
+              "https://img.drogaraia.com.br/catalog/product/e/s/escova-dental-colgate-whitening-com-2-unidades-1.jpg?width=520&height=520&quality=50&type=resize",
+            price: 23.55,
+            title: "Escova de dente perfeita",
+          },
       ],
       removeProduct: mockedRemoveProduct,
       updateProductAmount: mockedUpdateProductAmount,
@@ -85,5 +93,18 @@ describe('Testes na pagina Cart', () => {
     expect(secondProductAmount).toHaveDisplayValue('43');
   });
 
+  it('Teste para não ser capaz de diminuir uma quantidade de produto quando o valor é 1', () => {
+    const { getAllByTestId } = render(<Cart />);
+
+    const [decrementFirst] = getAllByTestId('decrement-product');
+    const [, , thirdProductAmount] = getAllByTestId('product-amount');
+
+    expect(thirdProductAmount).toHaveDisplayValue('1');
+
+    fireEvent.click(decrementFirst);
+
+    expect(decrementFirst).toHaveProperty('disabled');
+    
+  });
 
 });
