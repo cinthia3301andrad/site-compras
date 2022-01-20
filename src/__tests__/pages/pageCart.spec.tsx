@@ -107,4 +107,35 @@ describe('Testes na pagina Cart', () => {
     
   });
 
+  it('Teste de remoção de produto', () => {
+    const { getAllByTestId, rerender } = render(<Cart />);
+
+    const [removeFirst] = getAllByTestId('remove-product');
+    const [firstProduct, secondProduct] = getAllByTestId('product');
+
+    expect(firstProduct).toBeInTheDocument();
+    expect(secondProduct).toBeInTheDocument();
+
+    fireEvent.click(removeFirst);
+
+    expect(mockedRemoveProduct).toHaveBeenCalledWith(1);
+
+    mockedUseCartHook.mockReturnValueOnce({
+      cart: [
+        {
+          id: 2,
+          amount: 43,
+          image:
+            "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS7xhvzwYuN6MHS5cvjPus-IYDlNe1eRpatiyB_zqjvEye22XA2vTagDsY8w7b9LskMSLNJL9EwWzGK3x80MCmTTLwde0ClZy33_Hpivqo&usqp=CAE",
+          price: 23.55,
+          title: "Batom nude cobertura total",
+        },
+      ],
+    });
+
+    rerender(<Cart />);
+
+    expect(firstProduct).not.toBeInTheDocument();
+    expect(secondProduct).toBeInTheDocument();
+  });
 });
