@@ -4,7 +4,7 @@ import {
   MdRemoveCircleOutline,
 } from "react-icons/md";
 
-import { Modal, Button } from 'antd';
+import { Modal } from 'antd';
 import { useHistory } from "react-router-dom";
 
 import { useCart } from "../../hooks/useCart";
@@ -57,8 +57,7 @@ const Cart = (): JSX.Element => {
       
     });
   }
-/*   history.push("/");
-      handleEmptyCart(); */
+
   return (
     <Container>
       <ProductTable>
