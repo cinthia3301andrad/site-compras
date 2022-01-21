@@ -4,6 +4,9 @@ import {
   MdRemoveCircleOutline,
 } from "react-icons/md";
 
+import { Modal, Button } from 'antd';
+import { useHistory } from "react-router-dom";
+
 import { useCart } from "../../hooks/useCart";
 import { formatPrice } from "../../util/format";
 import { Container, ProductTable, Total } from "./styles";
@@ -17,7 +20,9 @@ interface Product {
 }
 
 const Cart = (): JSX.Element => {
-  const { cart, removeProduct, updateProductAmount } = useCart();
+  const history = useHistory();
+
+  const { cart, removeProduct, updateProductAmount, handleEmptyCart } = useCart();
 
   const cartFormatted = cart.map((product) => ({
     ...product,
@@ -42,6 +47,18 @@ const Cart = (): JSX.Element => {
     removeProduct(productId);
   }
 
+  function countDown() {
+
+    Modal.success({
+      title: 'Pedido finalizado com sucesso!',
+      content: `Continue comprando.`,
+      onOk() { history.push("/")
+      handleEmptyCart()},
+      
+    });
+  }
+/*   history.push("/");
+      handleEmptyCart(); */
   return (
     <Container>
       <ProductTable>
@@ -109,7 +126,7 @@ const Cart = (): JSX.Element => {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type="button" onClick={countDown}>Finalizar pedido</button>
 
         <Total>
           <span>TOTAL</span>

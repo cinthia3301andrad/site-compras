@@ -14,6 +14,7 @@ interface UpdateProductAmount {
 
 interface CartContextData {
   cart: Product[];
+  handleEmptyCart: () => void;
   addProduct: (productId: number) => Promise<void>;
   removeProduct: (productId: number) => void;
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
@@ -30,6 +31,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
     return [];
   });
+
+  function handleEmptyCart(){
+    setCart([]);
+    localStorage.clear();
+  }
 
   const addProduct = async (productId: number) => {
     try {
@@ -125,7 +131,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductAmount }}
+      value={{ cart, handleEmptyCart,  addProduct, removeProduct, updateProductAmount }}
     >
       {children}
     </CartContext.Provider>
