@@ -46,6 +46,11 @@ Acesse a aplicação no ar pelo link: https://cinthia3301andrad.github.io/site-c
 ### Autor
 ---
 
+### 👉 Cobertura do código
+https://app.codecov.io/gh/cinthia3301andrad/site-compras/
+![Screenshot 2022-01-21 at 21-21-27 Codecov](https://user-images.githubusercontent.com/47640072/150616248-adb2f444-dbdb-4994-acee-290603712782.png)
+
+
 
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/47640072?s=400&u=63429990df49a363de4f3a25d522453dfe08eab3&v=4" width="100px;" />
  <br />
